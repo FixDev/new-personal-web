@@ -15,18 +15,20 @@ function Navbar() {
     from: { y: -50 },
     to: { y: 5 },
   });
+  const router = useRouter();
+
   const [menu, setMenu] = useState([
     { label: 'Home', active: true },
     { label: 'Project', active: false },
     { label: 'Tools', active: false },
   ]);
+  
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { theme, setTheme } = useTheme();
-  const router = useRouter();
 
   function whenMenuClicked(to: string) {
     router.push(`#${to}`);
-    const _menu = menu.map((val) => {
+    const _menu = menu.map((val: any) => {
       return val.label === to
         ? { ...val, active: true }
         : { ...val, active: false };
@@ -42,7 +44,9 @@ function Navbar() {
   return (
     <animated.div
       style={{ ...springs }}
-      className={'flex justify-center gap-x-10 lg:gap-x-5 sticky top-5'}
+      className={
+        'flex justify-around gap-x-3.5 lg:justify-center lg:gap-x-8 sticky top-5'
+      }
     >
       <div className="flex justify-center gap-x-2 item-center p-1 px-2 bg-white bg-transparent opacity-90  dark:bg-slate-300 rounded-full">
         {menu.map((val) => (
@@ -82,7 +86,7 @@ export default function Home() {
       <Navbar />
       <animated.main
         style={{ ...springs }}
-        className={`flex flex-col items-baseline md:items-center p-20 px-5 md:p-24 md:px-0`}
+        className={`flex flex-col items-baseline md:items-center p-20 px-5 md:p-24 md:px-0 mt-auto`}
       >
         <div className="max-w-xl mb-8">
           <Image
@@ -121,7 +125,10 @@ export default function Home() {
               height={30}
             />
           </a>
-          <a href="https://www.linkedin.com/in/muhammad-fikri-977a50192/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/muhammad-fikri-977a50192/"
+            target="_blank"
+          >
             <Image
               src="/svg/linkedin.svg"
               className="hover:bg-slate-500 dark:hover:bg-slate-200 hover:rounded-full"
