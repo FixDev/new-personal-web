@@ -45,7 +45,7 @@ function Navbar() {
     <animated.div
       style={{ ...springs }}
       className={
-        'flex justify-around gap-x-3.5 lg:justify-center lg:gap-x-8 sticky top-5'
+        'flex justify-around gap-x-3.5 md:justify-center md:gap-x-8 sticky top-5 mb-5'
       }
     >
       <div className="flex justify-center gap-x-2 item-center p-1 px-2 bg-white bg-transparent opacity-90  dark:bg-slate-300 rounded-full">
@@ -86,7 +86,7 @@ export default function Home() {
       <Navbar />
       <animated.main
         style={{ ...springs }}
-        className={`flex flex-col items-baseline md:items-center p-20 px-5 md:p-24 md:px-0 mt-auto`}
+        className={`flex flex-col items-baseline md:items-center m-28 mx-5 md:m-32 md:px-0`}
       >
         <div className="max-w-xl mb-8">
           <Image
